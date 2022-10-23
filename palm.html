@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        margin:0;
+        box-sizing: border-box;
+      }
+      body,
+::after,
+::before {
+  box-sizing: border-box !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+   
+      h1,
+      h2,
+      p,
+      body{
+    margin:0;
+   }
+   h1,
+   h2,
+   h3,
+   p{
+    margin-bottom: 1em;
+    color: yellow;
+    
+   }
+   
+   body{
+    font-size: 1.3125em;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    zoom:70%;
+    color: rgba(240, 248, 255, 0.692);
+   
+  
+   }
+   .text-center{
+    text-align: center;
+   }
+   .p-text{
+    color:black
+   }
+   
+.main-header {
+        background-image: url(./images/greenpalmbg.jpg);
+        background-size: cover;
+        background-color: rgb(0, 0, 0, 0.0.8);
+        background-blend-mode: multiply;
+        padding: 50px;
+        height: 220px;
+        margin-bottom: 10px;
+        height: 100%;
+        z-index: -1;
+        
+}
+@media(max-width:600px){
+  .main-header{
+    z-index: -1;
+    opacity: 0.8;
+    color:blanchedalmond;
+
+  }
+}
+section{
+  padding: 3rem 0;
+}
+.container{
+  margin-inline: auto;
+  width: min(90%,70.45rem);
+}
+@media(max-width:600px){
+  .container{
+  margin-inline: auto;
+  width: min(90%,20.45rem);
+ 
+}
+}
+img{
+  width: 350px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+
+.footer-section{
+  background-color:#009688;
+  
+}
+.footer li{
+  list-style-type: none;
+}
+.nav-container{
+  position:relative;
+  top:0;
+  right:0;
+  display: flex;
+  justify-content:center;
+
+
+}
+.nav-container li{
+  list-style-type: none;
+  margin: 10px;
+}
+.nav-container li a:hover{
+  border-bottom: 2px solid red;
+  z-index: 1;
+ 
+}
+
+.nav-container a{
+  text-decoration: none;
+  font-size: x-large;
+  color: #009688;
+}
+.img-section{
+  padding:8rem;
+
+}
+.flower{
+  border: 1px solid black;
+  background-color: cadetblue;
+}
+.flex-box{
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 100%;
+}
+@media(max-width:600px){
+  .flex-box{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+.footer{
+  background-color: #009688;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  
+}
+.footer-list a{
+  margin:10px;
+  color:black
+}
+.split-img{
+  margin:50px;
+}
+
+      
+        
+
+    </style>
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="nav-container">
+        <li><a href="">Home</a></li>
+       <li><a href="">Products</a></li>
+        <li><a href="">Contact</a></li>
+      </div>
+      <div class="intro">
+        <h1 class="text-center">
+          Welcome to Palm5 </h1>
+          <p class="text-center">
+            we deal in all kinds of palm products and we are here to serve you
+          </p>
+      
+      </div>
+    </header>
+    
+    <section class="img-section">
+      <div class="container">
+        <div class="flex-box">
+          <div class="split-img">
+          <div> <img src="./images/aka.jpg"/></div>
+          <p class="p-text">palm fruits</p>
+          </div>
+          <div class="split-img">
+            <div> <img src="./images/palmlighter.jpg"/>  </div>
+          <p class="p-text">Palm lighter</p>
+        </div>
+        <div class="split-img">
+            <div class="flower"> <img src="./images/palmproducts.jpg"/>  </div>
+          <p class="p-text">Palm flower</p>
+        </div>
+   
+   
+        </div>
+      </div>
+    </section>
+  
+            
+          <footer class="footer">
+            
+               <li class="footer-list"><a href=""><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+               <li class="footer-list"><a href=""><i class="fa-brands fa-instagram fa-2x"></i></li>
+               <li class="footer-list"><a href=""><i class="fa-solid fa-phone fa-2x"></i></li>
+                
+          
+              </footer>
+          
+      
+     
+    
+  </body>
+</html>
