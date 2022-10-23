@@ -1,0 +1,228 @@
+  * {
+      margin: 0;
+      box-sizing: border-box;
+  }
+
+  body,
+  ::after,
+  ::before {
+      box-sizing: border-box !important;
+      padding: 0px !important;
+      margin: 0px !important;
+  }
+
+  body,
+  h1,
+  p {
+      margin: 0;
+  }
+
+  body {
+      font-size: 1.3125em;
+      font-weight: 200;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.2;
+      background-color: #555;
+      background-image: url(/images/handsup.jpg);
+      
+      
+      
+      
+      
+
+  }
+
+  @media(max-width:600px) {
+      body {
+          background-color: cadetblue;
+          background-image: url(/images/handintheair.jpg) !important;
+          position: relative !important;
+          background-size: cover !important;
+          background-repeat: repeat-y !important;
+          color: aliceblue;
+          zoom: 75%;
+
+      }
+
+      .activities {
+          zoom: 60%;
+          transform: translate(50px, 300px);
+          border-radius: 15px 50px 30px;
+          font-size: large;
+          
+
+
+      }
+
+      h1 {
+          font-size: medium;
+          font-weight: 200;
+      }
+
+      p {
+          font-size: small;
+          font-style: italic;
+
+      }
+
+  }
+
+  header {
+
+      padding: 0 70px;
+      background: linear-gradient(-190.5deg,rgba(0,0,0,0.7) 50%, #607d8b8f 50%);
+      height: 100%;
+      margin: auto;
+      text-align: center;
+      position: relative;
+      color: whitesmoke;
+  }
+
+  @media(max-width:600px) {
+      header {
+          padding: 50px;
+
+      }
+  }
+
+  .nav-bar {
+      list-style-type: none;
+      margin: 0;
+      padding: 10;
+      width: fit-content;
+      display: flex;
+      margin-top: 20px;
+
+  }
+
+  .nav-bar a {
+      text-decoration: none;
+      display: block;
+      color: white;
+      padding: 2px 5px;
+      font-size: large;
+      font-weight: bold;
+      margin:5px;
+
+  }
+
+  li a.active {
+      background-color: #04AA6D;
+      color: white;
+  }
+
+  li a:hover:not(.active) {
+        background-color:red;
+      color: white;
+  }
+
+  .box span img {
+      width: 4%;
+      border-radius: 70%;
+      position: absolute;
+      transform-style: preserve-3d;
+      top: 0;
+      left: 0;
+      animation: animate 20s linear infinite;
+  }
+
+  @keyframes animate {
+      0% {
+          transform: perspective(1000px) rotateY(0deg);
+      }
+
+      100% {
+          transform: perspective(1000px) rotateY(370deg);
+      }
+  }
+
+  .container {
+      margin-inline: auto;
+      width: min(90%, 30.45rem);
+  }
+
+  .activities {
+      margin-top: 100px;
+      font-size: x-large;
+      animation: mymove 20s infinite;
+      color: #00968882;
+      max-width: fit-content;
+      border-radius: 15px 50px 30px;
+      transform: translate(180px, 30px);
+  }
+
+  .quotes {
+      background-color: gray;
+      width: fit-content;
+      border-radius: 15px 50px;
+      color: wheat;
+      padding: 20px;
+      background-image: url(./images/thorn.jpg);
+
+      background-blend-mode: rgba(0, 0, 0, 0.9);
+      font-style: italic;
+  }
+
+  @keyframes mymove {
+      from {
+          background-color: wheat;
+      }
+
+      to {
+          background-color: gray;
+      }
+  }
+
+  .activities li {
+      margin: 10px;
+      padding: 10px;
+      color: black;}
+
+      .footer-items{
+    display: flex;
+    justify-content: center;
+    
+      }
+
+      .fa-brands{
+
+        font-size: 35px;
+        font-weight: bolder;
+        align-self: center;
+        margin:10px;
+
+      }
+      .fa-youtube{
+        color:red;
+      }
+      .fa-facebook{
+        color:blue;
+      }
+      .fa-instagram{
+        color:purple
+      }
+
+      footer{
+        
+        background-color: #607d8b91;
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        padding: 50px;
+        display: block;
+        width: 100%;
+    
+        
+      }
+      @media(max-width:600px){
+        footer{
+            position:absolute;
+            bottom: -600px;
+            align-items: center;
+            
+            
+        }
+      }
+
+       
+    
