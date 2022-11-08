@@ -1,228 +1,368 @@
-  * {
-      margin: 0;
-      box-sizing: border-box;
-  }
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body,
+::after,
+::before{
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding:0 !important;
+    position: relative;
 
-  body,
-  ::after,
-  ::before {
-      box-sizing: border-box !important;
-      padding: 0px !important;
-      margin: 0px !important;
-  }
+    
+}
 
-  body,
-  h1,
-  p {
-      margin: 0;
-  }
-
-  body {
-      font-size: 1.3125em;
-      font-weight: 200;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.2;
-      background-color: #555;
-      background-image: url(/images/handsup.jpg);
-      
-      
-      
-      
-      
-
-  }
-
-  @media(max-width:600px) {
-      body {
-          background-color: cadetblue;
-          background-image: url(/images/handintheair.jpg) !important;
-          position: relative !important;
-          background-size: cover !important;
-          background-repeat: repeat-y !important;
-          color: aliceblue;
-          zoom: 75%;
-
-      }
-
-      .activities {
-          zoom: 60%;
-          transform: translate(50px, 300px);
-          border-radius: 15px 50px 30px;
-          font-size: large;
-          
-
-
-      }
-
-      h1 {
-          font-size: medium;
-          font-weight: 200;
-      }
-
-      p {
-          font-size: small;
-          font-style: italic;
-
-      }
-
-  }
-
-  header {
-
-      padding: 0 70px;
-      background: linear-gradient(-190.5deg,rgba(0,0,0,0.7) 50%, #607d8b8f 50%);
-      height: 100%;
-      margin: auto;
-      text-align: center;
-      position: relative;
-      color: whitesmoke;
-  }
-
-  @media(max-width:600px) {
-      header {
-          padding: 50px;
-
-      }
-  }
-
-  .nav-bar {
-      list-style-type: none;
-      margin: 0;
-      padding: 10;
-      width: fit-content;
-      display: flex;
-      margin-top: 20px;
-
-  }
-
-  .nav-bar a {
-      text-decoration: none;
-      display: block;
-      color: white;
-      padding: 2px 5px;
-      font-size: large;
-      font-weight: bold;
-      margin:5px;
-
-  }
-
-  li a.active {
-      background-color: #04AA6D;
-      color: white;
-  }
-
-  li a:hover:not(.active) {
-        background-color:red;
-      color: white;
-  }
-
+    
+  body,html{
+    background:linear-gradient(45deg,#cddc39,#4fc3f7) ;
+    overflow-x: hidden;
+  } 
   .box span img {
-      width: 4%;
-      border-radius: 70%;
-      position: absolute;
-      transform-style: preserve-3d;
-      top: 0;
-      left: 0;
-      animation: animate 20s linear infinite;
-  }
+    width: 4%;
+    border-radius: 70%;
+    position: absolute;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
+    animation: animate 25s linear infinite;
+}
 
-  @keyframes animate {
-      0% {
-          transform: perspective(1000px) rotateY(0deg);
-      }
+@keyframes animate {
+    0% {
+        transform: perspective(1500px) rotateY(0deg);
+    }
 
-      100% {
-          transform: perspective(1000px) rotateY(370deg);
-      }
-  }
-
-  .container {
-      margin-inline: auto;
-      width: min(90%, 30.45rem);
-  }
-
-  .activities {
-      margin-top: 100px;
-      font-size: x-large;
-      animation: mymove 20s infinite;
-      color: #00968882;
-      max-width: fit-content;
-      border-radius: 15px 50px 30px;
-      transform: translate(180px, 30px);
-  }
-
-  .quotes {
-      background-color: gray;
-      width: fit-content;
-      border-radius: 15px 50px;
-      color: wheat;
-      padding: 20px;
-      background-image: url(./images/thorn.jpg);
-
-      background-blend-mode: rgba(0, 0, 0, 0.9);
-      font-style: italic;
-  }
-
-  @keyframes mymove {
-      from {
-          background-color: wheat;
-      }
-
-      to {
-          background-color: gray;
-      }
-  }
-
-  .activities li {
-      margin: 10px;
-      padding: 10px;
-      color: black;}
-
-      .footer-items{
+    100% {
+        transform: perspective(1500px) rotateY(370deg);
+    }
+}     
+    
+.navigation{
+    position: absolute;
+    top:20px;
+    right:20px;
+    width:120px;
+    height:60px;
+    background: linear-gradient(45deg,#cddc39,#4fc3f7);
+    box-shadow: 0 25px 35px rgba(0,0,0,0.1);
     display: flex;
-    justify-content: center;
+    justify-content:space-between;  
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.75s;
+    overflow: hidden;
+
+}
+@media(max-width:600px){
+    .navigation{
+        right:120px;
+        top:0;
+    }
+}
+
+.navigation.active{
+    width: 200px;
+    height: 300px;
+    transition: width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.75s;
+}
+.navigation.active .userBx{
+    width:calc(100%-60px)
+}
+.navigation .userBx .username{
+    white-space: nowrap;
+    color:#555;
+    font-size: 1.1em;
+}
+
+.navigation .userBx{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color:linear-gradient(45deg,#cddc39,#4fc3f7);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.navigation .userBx .imgBx{
+    position:relative;
+    min-width: 60px;
+    height: 60px;
+    overflow: hidden;
+    background-color:#000;
+    border-radius: 50%;
+    border:10px solid #fff;
     
-      }
-
-      .fa-brands{
-
-        font-size: 35px;
-        font-weight: bolder;
-        align-self: center;
-        margin:10px;
-
-      }
-      .fa-youtube{
-        color:red;
-      }
-      .fa-facebook{
-        color:blue;
-      }
-      .fa-instagram{
-        color:purple
-      }
-
-      footer{
-        
-        background-color: #607d8b91;
-        position:absolute;
-        bottom: 0;
-        left: 0;
-        padding: 50px;
-        display: block;
-        width: 100%;
     
-        
-      }
-      @media(max-width:600px){
-        footer{
-            position:absolute;
-            bottom: -600px;
-            align-items: center;
-            
-            
-        }
-      }
+}
+.navigation .userBx .imgBx img{
+    position:absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.navigation .menuToggle{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.navigation .menuToggle::before
+{
+    content: ' ';
+    position: absolute;
+    height: 2px;
+    width:32px;
+    background-color: #555;
+    transform: translateY(-10px);
+    box-shadow: 0 10px #555;
+    transition: 0.5s;
+}
+.navigation .menuToggle::after
+{
+    content: ' ';
+    position: absolute;
+    height: 2px;
+    width:32px;
+    background-color: #555;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+.navigation.active .menuToggle::before{
+    transform:translateY(0px) rotate(45deg);
+    box-shadow: 0 0 #555;
+
+}
+.navigation.active .menuToggle::after{
+    transform:translateY(0px) rotate(-45deg);
+
+}
+.menu{
+    position: absolute;
+    width: 100%;
+    height:calc(100%-60px);
+    margin-top: 80px;
+    padding:20px;
+    border-top:1px solid rgba(0,0,0,0.1)
+
+    
+}
+.menu li{
+    list-style:  none;
+}
+.menu li a{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    margin: 20px 0;
+    font-size: 1em;
+    text-decoration: none;
+    color:#555;
+}
+
+
+
+
+header{
+    padding: 400px;
+    background-image: url(./images/fNbrojW.webp);
+    background-blend-mode:multiply;
+    background-color: #4fc3f7;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 100%;
+    position: relative;
+    height: 100%;
+    margin:auto
+}
+
+@media(max-width:600px){
+    header{
+        padding:180px;
+        width: 127.9vw;
+    
+    }
+}
+.all-container{
+    margin-inline: auto;
+    width:min(100%,75.45rem);
+    
+  
+    
+}
+@media(max-width:600px){
+      .all-container{
+        width: min(90%,90rem);
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
 
        
+    }
+}
+
+.word{
+    padding: 70px;
     
+}
+.word h2{
+font-size:x-large
+}
+.activities{
+    padding: 200px;
+    display:flex;
+    justify-content: space-around;
+    background-image: url(./images/biblestudy.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(96, 125, 139, 1);
+    background-blend-mode: multiply;
+    opacity: 0.7;
+    font-weight:lighter;
+    color: white ;
+   
+    
+    
+}
+@media(max-width:600px){
+    .activities{
+        padding:60px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 127.9vw;
+        display: inline-block;
+    }
+}
+.activities > div{
+    margin-right: 150px;
+    max-width: 90%;
+    
+}
+
+
+    
+
+@media(max-width:600px){
+    .activities>div{
+        margin:20px;
+        
+    }
+}
+
+.mission{
+    word-break:normal;
+    max-width: 400px;
+    
+}
+
+.img-flex{
+
+    display: flex;
+    padding:100px;
+    justify-content:center;
+    width: min(100%,90rem);
+    height: 100%;
+    
+   
+
+}
+@media(max-width:600px) {
+    .img-flex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding:80px
+    
+    }
+
+    
+}
+.img-flex >div{
+    max-width: 100%;
+    height:auto;
+    margin:15px;
+
+
+}
+
+.youth> .youth-img{
+    border-radius: 50%;
+    width: 300px;
+    height:auto;
+    object-fit:cover;
+    clip-path: circle();
+   
+}
+.children >.children-img{
+    border-radius: 50%;
+    max-width: 300px;
+    height:auto;
+    object-fit:cover;
+    clip-path: circle();
+}
+.kids > .kids-img{
+    border-radius: 50%;
+    max-width: 300px;
+    height:auto;
+    object-fit:cover;
+    clip-path: circle();
+}
+footer{
+    background-color:#607d8bb3;
+    width:100vw;
+    padding: 100px;
+    bottom: 0;
+    position:relative;
+    height: auto;
+    left:0;
+    right: 0;
+    
+}
+@media(max-width:600px){
+    footer{
+        width:127.9vw;
+    }
+ 
+}
+.church-info{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-weight: bold;
+    color: black;
+}
+@media(max-width:600px){
+    .church-info{
+        justify-content: space-evenly;
+        margin-right: 120px;
+        color: #000;       
+    
+    }
+}
+.church-box>p{
+    margin:15px;
+    
+}
+.socials{
+    display: flex;
+    padding: 18px;
+
+}
+@media(max-width:600px){
+    .socials{
+        margin-right: 150px;
+    }
+}
+.socials>.fa-brands{
+    margin: 20px;
+}
