@@ -336,12 +336,12 @@ body {
     background-color: #f4f4f4;
 }
 
-ul {
+#users ul {
     list-style: none;
     padding: 10px;
 }
 
-ul li {
+#users ul li {
     padding: 5px;
     background-color: #f4f4f4;
     margin: 5px 0;
