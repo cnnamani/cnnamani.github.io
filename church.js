@@ -24,4 +24,35 @@
       document.querySelector('.quotes').innerHTML= (quotes[Object.keys(quotes)[Math.floor(Math.random()*Object.keys(quotes).length)]]) 
      
  },5000);
+
+ const email = document.querySelector('#email')
+const name = document.querySelector('#name')
+const userList = document.querySelector('#users')
+const myform = document.querySelector('#my-form')
+const msg = document.querySelector('.msg')
+
+myform.addEventListener('submit', onSubmit)
+function onSubmit(e){
+    e.preventDefault();
+
+    if(name.value===''|| email.value===''){
+        msg.classList.add('error');
+        msg.innerHTML='please fill the form'
+
+
+    }else{
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(` Name:${name.value} Email:${email.value}`))
+        userList.appendChild(li)
+        msg.style.background = "pink"
+        msg.innerHTML='Thank you'
+        setTimeout(()=>{
+            msg.remove()
+        },2000)
+    }
+
+    name.value = '';
+    email.value = "";
+
+}
     
